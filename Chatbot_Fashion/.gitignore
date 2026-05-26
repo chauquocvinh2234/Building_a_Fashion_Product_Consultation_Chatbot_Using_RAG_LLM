@@ -1,0 +1,27 @@
+# Python cache & virtual environment
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# Databases & Storage
+qdrant_data/
+storage/
+images/
+# Datasets
+data/metadata/
+# Bỏ comment 2 dòng dưới nếu bạn có các file csv/jsonl lớn nằm rải rác bên ngoài mà không muốn push lên
+# *.jsonl
+# *.csv
+
+# OS generated files
+.DS_Store
+Thumbs.db

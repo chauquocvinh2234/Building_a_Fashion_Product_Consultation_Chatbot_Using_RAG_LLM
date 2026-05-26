@@ -2,12 +2,13 @@
 # 👗 Fashion Chatbot RAG Git Ignore Configuration
 # =========================================================================
 
-# Tài liệu báo cáo chi tiết nhóm (File Word báo cáo)
+# --- 1. Tài liệu báo cáo & Ấn phẩm (Reports & Public Documents) ---
+# Không đẩy các file báo cáo lớn hoặc file PDF/Word tạm thời lên Git
 NLP_XayDungHeThongChatbotTuVanSanPhamThoiTrangSuDungKyThuatRAGVaLLM.docx
 *.docx
 *.pdf
 
-# Môi trường ảo (Python Virtual Environments)
+# --- 2. Môi trường ảo Python (Python Virtual Environments) ---
 .venv/
 venv/
 env/
@@ -16,21 +17,23 @@ bin/
 lib/
 include/
 
-# Bộ nhớ đệm Python (Python Cache & Compiled Files)
+# --- 3. Bộ nhớ đệm Python & Jupyter (Python & Jupyter Caches) ---
 __pycache__/
+*.py[cod]
+*$py.class
 *.pyc
 *.pyo
 *.pyd
 .pytest_cache/
 .ipynb_checkpoints/
 
-# Dữ liệu bảo mật & Môi trường cấu hình (Credentials & Environments)
+# --- 4. Cấu hình bảo mật & Biến môi trường (Credentials & Environment Files) ---
 .env
 .env.local
 .env.*.local
 *.log
 
-# Tập tin cấu hình IDE & Editor
+# --- 5. Tập tin cấu hình IDE & Editor (IDE & Editor Settings) ---
 .vscode/
 .idea/
 *.suo
@@ -39,7 +42,28 @@ __pycache__/
 *.sln
 *.swp
 
-# Tập tin hệ điều hành (OS Junk Files)
+# --- 6. Tập tin rác của Hệ điều hành (OS Junk Files) ---
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# --- 7. Cấu hình đặc thù cho Chatbot_Fashion (Chatbot Sub-project Configuration) ---
+# Thư mục chứa cơ sở dữ liệu Vector Qdrant và Redis (Docker volumes)
+Chatbot_Fashion/storage/
+Chatbot_Fashion/qdrant_data/
+**/storage/
+**/qdrant_data/
+
+# Dữ liệu thu thập & Metadata sản phẩm lớn (Scraped/Processed Metadata)
+Chatbot_Fashion/data/metadata/
+**/data/metadata/
+
+# Thư mục hình ảnh động/tải về của chatbot (Tránh bỏ qua thư mục hình ảnh sơ đồ thiết kế ở thư mục gốc)
+Chatbot_Fashion/images/
+
+# Bỏ chú thích các dòng dưới nếu bạn muốn bỏ qua các tệp dữ liệu CSV/JSONL lớn
+# Chatbot_Fashion/data/*.csv
+# Chatbot_Fashion/data/*.jsonl
+# *.csv
+# *.jsonl
+
