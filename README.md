@@ -98,6 +98,8 @@ Our knowledge base is compiled by aggregating three diverse data streams to ensu
 
 ## 🧹 2. Product Preprocessing Pipeline
 
+![Product Preprocessing Dataflow](images/LuongXuLyDuLieu.png)
+
 To synthesize the raw streams of Amazon and Lazada datasets, we execute a dual-stage cleaning pipeline:
 
 ### Phase 1: Rough Cleaning
@@ -323,6 +325,12 @@ Following our complete execution of the pipeline, the active knowledge base regi
 * **Total Standardized Product Records:** `53,979` items.
 * **Total Expert Outfit Recipes:** `1,000` structured recipes (split for Men, Women, and Kids).
 * **Localization Profile:** 100% Vietnamese translation supporting common bilingual terminology (e.g., *oversized, blazer, mix & match*).
+
+### Data Visualization
+<p align="center">
+  <img src="images/danh_muc_thoi_trang.png" alt="Fashion Product Distribution by Categories" width="48%" />
+  <img src="images/gia_tri_unique_san_pham.png" alt="Unique Product Attribute Counts" width="48%" />
+</p>
 
 ---
 ## 🤝 Contributors
