@@ -113,16 +113,16 @@ Drives the cleaned data through an LLM to build a unified Vietnamese schema:
 
 | Field | Type | Description |
 | :--- | :--- | :--- |
-| `product_id` | String | Unique product identifier (ASIN / Lazada ID) |
+| `product_id` | String | Unique product identifier |
 | `title` | String | Standardized, highly descriptive product title in Vietnamese |
-| `category` | String | Broad product category (e.g., *Chân váy, Áo khoác, Tất thể thao*) |
-| `department` | String | Target demographic (*Nam, Nữ, Trẻ em*) |
+| `category` | String | Broad product category |
+| `department` | String | Target demographic |
 | `price` | Numeric | Normalized numerical price in VND |
 | `details` | Object | Physical properties map: `main_color` (dominant color), `material` (fabric type), `size` (available sizes), `pattern` (print/texture) |
-| `season` | String | Harmonized season suitability (*Mùa xuân, Mùa hạ, Mùa thu, Mùa đông, Quanh năm*) |
-| `occasion` | Array | Occasion suitability array (*Thể thao, Du lịch, Công sở, Đi học, Hàng ngày, Dạ tiệc*) |
+| `season` | String | Harmonized season suitability |
+| `occasion` | Array | Occasion suitability array |
 | `brand` | String | Extracted brand name |
-| `images` | Array | Array of local image paths and their variant positions (`MAIN`, `PT01`, ...) |
+| `images` | Array | Array of local image paths and their variant positions |
 | `description` | String | Concise, marketing-ready product description in Vietnamese |
 
 ---
@@ -323,3 +323,13 @@ Following our complete execution of the pipeline, the active knowledge base regi
 * **Total Standardized Product Records:** `53,979` items.
 * **Total Expert Outfit Recipes:** `1,000` structured recipes (split for Men, Women, and Kids).
 * **Localization Profile:** 100% Vietnamese translation supporting common bilingual terminology (e.g., *oversized, blazer, mix & match*).
+
+---
+## 🤝 Contributors
+### 👤 Châu Quốc Vinh
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/chauquocvinh2234)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:vinhit220304@gmail.com)
+
+### 👤 Vũ Trọng Nghĩa
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TrongNghia041104)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nghia.hpotaku04@gmail.com)
