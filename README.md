@@ -1,4 +1,4 @@
-# 👗 Building a Multimodal Fashion Product Consultation Chatbot using RAG & LLM
+# Building a Fashion Consultation Chatbot using RAG (Retrieval-Augmented Generation) and Large Language Models (LLMs).
 ---
 
 ## 📌 Project Overview
