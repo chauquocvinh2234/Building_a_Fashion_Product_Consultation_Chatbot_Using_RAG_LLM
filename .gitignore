@@ -1,0 +1,45 @@
+# =========================================================================
+# 👗 Fashion Chatbot RAG Git Ignore Configuration
+# =========================================================================
+
+# Tài liệu báo cáo chi tiết nhóm (File Word báo cáo)
+NLP_XayDungHeThongChatbotTuVanSanPhamThoiTrangSuDungKyThuatRAGVaLLM.docx
+*.docx
+*.pdf
+
+# Môi trường ảo (Python Virtual Environments)
+.venv/
+venv/
+env/
+ENV/
+bin/
+lib/
+include/
+
+# Bộ nhớ đệm Python (Python Cache & Compiled Files)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Dữ liệu bảo mật & Môi trường cấu hình (Credentials & Environments)
+.env
+.env.local
+.env.*.local
+*.log
+
+# Tập tin cấu hình IDE & Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Tập tin hệ điều hành (OS Junk Files)
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,46 @@
+{
+    "product_id":"B07SB2892S",
+    "title":"Bộ 3 đôi tất ống ép hỗ trợ bắp chân RONNOX nữ",
+    "category":"Phụ kiện hỗ trợ",
+    "department":"Nữ",
+    "price":431759,
+    "details":{
+        "main_color":"Hồng neon, Xanh neon",
+        "material":"Neoprene",
+        "size":"S, M, L, XL",
+        "pattern":"Trơn, Họa tiết thể thao"
+    },
+    "season":"Quanh năm",
+    "occasion":["Thể thao","Du lịch"],
+    "brand":"RONNOX",
+    "images":[
+        {"large":"images/B07SB2892S_MAIN.jpg","variant":"MAIN"},
+        {"large":"images/B07SB2892S_PT01.jpg","variant":"PT01"}
+    ],
+    "description":"Tất hỗ trợ bắp chân với công nghệ nén giúp cải thiện tuần hoàn máu và giảm mỏi cơ. Chất liệu vải mềm mại, thấm hút mồ hôi và co giãn tốt."
+}
+{
+    "product_id": "pdp-i13360675870", 
+    "title": "Chân váy dài lụa Organza thêu đính", 
+    "category": "Chân váy", 
+    "department": "Nữ", 
+    "price": 17655000, 
+    "details": {
+        "main_color": "Xám chim bồ câu", 
+        "material": "Sa tanh, lụa Organza", 
+        "size": "S, L", 
+        "pattern": "In toàn bộ"
+    }, 
+    "season": "Mùa hạ", 
+    "occasion": ["Xã hội", "Hàng ngày"], 
+    "brand": "V·grass/V-GRASS", 
+    "images": [
+        {"large": "images/pdp-i13360675870_MAIN.jpg", "variant": "MAIN"}, 
+        {"large": "images/pdp-i13360675870_PT01.jpg", "variant": "PT01"}, 
+        {"large": "images/pdp-i13360675870_PT02.jpg", "variant": "PT02"}, 
+        {"large": "images/pdp-i13360675870_PT03.jpg", "variant": "PT03"}, 
+        {"large": "images/pdp-i13360675870_PT04.jpg", "variant": "PT04"}, 
+        {"large": "images/pdp-i13360675870_PT05.jpg", "variant": "PT05"}
+    ], 
+    "description": "Chân váy chữ A dài nửa thân được chế tác từ lụa organza cao cấp với chi tiết đính cườm thủ công tinh xảo. Thiết kế sang trọng, linh hoạt cho cả đi chơi và sự kiện trang trọng."
+}

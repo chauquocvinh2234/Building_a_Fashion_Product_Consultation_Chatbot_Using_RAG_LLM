@@ -1,0 +1,65 @@
+{
+    "itemID": "p1", 
+    "category": "mid_layer_top", 
+    "title": "basic fleece-lined hooded sweatshirt", 
+    "gender": "Men's", 
+    "style": "minimalist casual hooded top", 
+    "outline": "loose fit", 
+    "materials": "cotton", 
+    "color": "heather gray", 
+    "pattern": "hooded", 
+    "detail": "Hooded, with pockets, 400g heavyweight fabric, wrinkle-resistant, regular length, flattering fit, versatile for layering and various occasions", 
+    "donning/doffing": "pullover"
+}
+{
+    "itemID": "p2", 
+    "category": "inner_top", 
+    "title": "minimalist solid color versatile long-sleeve T-shirt", 
+    "gender": "Men's", 
+    "style": "casual basic top", 
+    "outline": "regular fit", 
+    "materials": "cotton", 
+    "color": "black", 
+    "pattern": "crew neck", 
+    "detail": "Solid color base layer, suitable for layering, can be worn alone with accessories, soft and skin-friendly fabric, regular length", 
+    "donning/doffing": "pullover"
+}
+{
+    "itemID": "p3", 
+    "category": "inner_top", 
+    "title": "minimalist solid color versatile long-sleeve T-shirt", 
+    "gender": "Men's", 
+    "style": "casual basic top", 
+    "outline": "regular fit", 
+    "materials": "cotton", 
+    "color": "white", 
+    "pattern": "crew neck", 
+    "detail": "Solid color base layer, suitable for layering, can be worn alone with accessories, soft and skin-friendly fabric, regular length", 
+    "donning/doffing": "pullover"
+}
+{
+    "itemID": "p4", 
+    "category": "bottom", 
+    "title": "distressed casual trousers", 
+    "gender": "Men's", 
+    "style": "vintage casual trousers", 
+    "outline": "straight fit", 
+    "materials": "cotton", 
+    "color": "brown", 
+    "pattern": "straight-leg", 
+    "detail": "3D paneled construction, vintage topstitching with pocket layout, washed distressed finish, versatile styling, high daily wearability", 
+    "donning/doffing": "zipper closure"
+}
+{
+    "itemID": "p5", 
+    "category": "shoes", 
+    "title": "mid-top wheat boots", 
+    "gender": "Men's", 
+    "style": "outdoor casual utility boots", 
+    "outline": "mid-top fit", 
+    "materials": "leather", 
+    "color": "wheat", 
+    "pattern": "work boots", 
+    "detail": "Shock-absorbing and waterproof, lace-up closure, suitable for outdoor and daily wear, classic yellow boot design", 
+    "donning/doffing": ""
+}
