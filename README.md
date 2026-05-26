@@ -16,46 +16,13 @@ We solve the fundamental limitations of modern e-commerce chatbots (rigid rule-b
 
 ## ⚙️ Core Architecture & Data Flows
 
-The diagram below illustrates the end-to-end system, connecting the off-line Data Processing pipeline with the real-time Multimodal RAG Query execution:
+The diagrams below illustrate the end-to-end system architecture and the data processing flows of our fashion chatbot:
 
-```mermaid
-graph TD
-    classDef source fill:#e1f5fe,stroke:#0288d1,stroke-width:2px,color:#01579b;
-    classDef process fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,color:#5d4037;
-    classDef database fill:#e8f5e9,stroke:#388e3c,stroke-width:2px,color:#1b5e20;
-    classDef runtime fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px,color:#4a148c;
-
-    subgraph OffLine_Data_Pipeline [1. Offline Data Pipeline]
-        A1["Amazon Reviews 2023"]:::source --> B1["Rough Cleaning & Token Optimization"]:::process
-        A2["Lazada VN (Selenium Crawled)"]:::source --> B1
-        B1 --> B2["Intelligent LLM Structuring (Vietnamese Translate)"]:::process
-        B2 --> C1[("Standardized Product DB (53,979 items)")]:::database
-        
-        A3["FashionStylist Dataset (V1)"]:::source --> D1["Rule-based & LLM Outfit Ingestion"]:::process
-        D1 --> C2[("Fashion Recipes DB (1,000 Outfits)")]:::database
-    end
-
-    subgraph RealTime_RAG_Chatbot [2. Real-Time Multimodal RAG Chatbot]
-        UI["User Interface (Web/Mobile)"]:::runtime -->|1. Input Message + Image| MC["Multimodal Classifier (VLM: Qwen2.5-VL)"]:::runtime
-        
-        MC -->|2a. Image type: PERSON| AP["Analyze Physical Profile (Body Shape, Skin Tone)"]:::runtime
-        AP -->|Save to Session Profile| RC[("Redis Conversational Cache (TTL)")]:::database
-        
-        MC -->|2b. Image type: PRODUCT| SP["Extract features (Color, Material, Form) as query text"]:::runtime
-        SP --> EM["Embedding Model (BGE-M3)"]:::runtime
-        
-        UI -->|Input text query| EM
-        EM -->|3. Query Vector| VS["Qdrant Vector Database"]:::database
-        
-        RC -->|4a. Filter Constraints: Gender, Size, Budget| VS
-        VS -->|4b. Top-K Context + In-Stock Items| QA["LLM Generator (Qwen3-4B-Instruct)"]:::runtime
-        
-        RC -->|4c. Short-term Chat History Context| QA
-        QA -->|5. Stylist-styled Vietnamese Answer| UI
-    end
-
-    C1 & C2 -.->|Initialize Vectors| VS
-```
+<p align="center">
+  <img src="images/KienTrucHeThong.jpg" alt="Fashion Chatbot RAG System Architecture" width="95%" />
+  <br/><br/>
+  <img src="images/LuongXuLyDuLieu.png" alt="Product Preprocessing Dataflow Pipeline" width="95%" />
+</p>
 
 ---
 
