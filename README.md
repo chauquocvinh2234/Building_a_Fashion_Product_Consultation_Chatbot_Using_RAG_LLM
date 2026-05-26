@@ -323,7 +323,7 @@ This dataset coordinates with our target catalog to yield abstract outfit bluepr
 ## 📈 5. Catalog & Dataset Statistics
 Following our complete execution of the pipeline, the active knowledge base registers:
 * **Total Standardized Product Records:** `53,979` items.
-* **Total Expert Outfit Recipes:** `1,000` structured recipes (split for Men, Women, and Kids).
+* **Total Expert Outfit Recipes:** `1,000` structured recipes.
 * **Localization Profile:** 100% Vietnamese translation supporting common bilingual terminology (e.g., *oversized, blazer, mix & match*).
 
 ### Data Visualization
