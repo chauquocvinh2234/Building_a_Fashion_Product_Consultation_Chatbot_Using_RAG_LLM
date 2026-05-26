@@ -1,10 +1,7 @@
-# 👗 Fashion Knowledge Graph & Data Pipeline for RAG & LLM Chatbots
-> **Project:** Building an Intelligent, Ultra-Personalized Fashion Consultation Chatbot using RAG (Retrieval-Augmented Generation) and Large Language Models (LLMs).
-> **Authors:** Group 05 - Industrial University of Ho Chi Minh City (IUH).
-
+# Building a Fashion Consultation Chatbot using RAG (Retrieval-Augmented Generation) and Large Language Models (LLMs).
 ---
 
-## 📖 Project Overview
+## 📌 Project Overview
 This repository hosts the **Data Engineering** pipeline of our project – from raw ingestion, automated crawling, cleaning, and normalization, to expert fashion knowledge mapping. This pipeline establishes a highly structured, semantically rich **Knowledge Base** that acts as the core of our RAG-based chatbot. It ensures highly accurate retrievals, eliminates LLM hallucinations, and enables **ultra-personalized** styling recommendations based on:
 * **Body Silhouette (Vóc dáng):** Pear shape (Dáng quả lê), Apple shape (Dáng quả táo), Hourglass (Dáng đồng hồ cát), Rectangle (Dáng hình chữ nhật), Plus-size (Người ngoại cỡ), Lean/Masc (Người mảnh khảnh), etc.
 * **Skin Tone (Tông da):** Fair (Da sáng), Medium (Da trung bình), Tan (Da ngăm).
@@ -326,32 +323,3 @@ Following our complete execution of the pipeline, the active knowledge base regi
 * **Total Standardized Product Records:** `53,979` items.
 * **Total Expert Outfit Recipes:** `1,000` structured recipes (split for Men, Women, and Kids).
 * **Localization Profile:** 100% Vietnamese translation supporting common bilingual terminology (e.g., *oversized, blazer, mix & match*).
-
-> [!TIP]
-> By filtering out redundant HTML tags, scraping artifacts, and noise from the raw product inputs, we achieved a **45% reduction in mean prompt token footprint** compared to keeping raw Lazada/Amazon objects. This significantly saves API inference costs and drops retrieval latency (TTFT) by almost half.
-
----
-
-## 🚀 6. Pipeline Deployment & Script Execution
-
-### 6.1. Environment Setup
-Install required scraping, network, and imaging libraries:
-```bash
-pip install selenium pillow requests pandas
-```
-
-### 6.2. Lazada Scraping Pipeline
-Launch the web crawlers to collect URLs and raw target objects:
-```bash
-python crawl_lazada_urls.py
-python scrape_lazada_metadata.py
-```
-
-### 6.3. Run Preprocessing & Formula Mapping
-Execute the translation, token reduction, and rule-based outfit mapping scripts:
-```bash
-python preprocess_products.py
-python map_fashion_recipes.py
-```
-
-Output files will compile in `data_samples/processed_fashion_metadata/` and `data_samples/processed_fashion_recipes/` in clean JSONL format, fully formatted to upsert into **Qdrant Vector Database** for RAG.
