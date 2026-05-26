@@ -1,4 +1,4 @@
-# Building a Fashion Consultation Chatbot using RAG (Retrieval-Augmented Generation) and Large Language Models (LLMs).
+# Building a Fashion Consultation Chatbot using Retrieval-Augmented Generation and Large Language Models.
 ---
 
 ## 📌 Project Overview
@@ -95,16 +95,16 @@ To standardize raw heterogeneous inputs from Amazon and Lazada into a single, hi
 
 | Field | Type | Description |
 | :--- | :--- | :--- |
-| `product_id` | String | Unique product identifier (ASIN or Lazada SKU) |
+| `product_id` | String | Unique product identifier |
 | `title` | String | Standardized, highly descriptive product title in Vietnamese |
-| `category` | String | Standardized broad category (e.g., *Áo*, *Quần*, *Chân váy*, *Giày*, *Túi xách*) |
-| `department` | String | Target demographic (*Nam*, *Nữ*, *Unisex*) |
-| `price` | Numeric | Normalized price in VND (Amazon USD converted to VND) |
+| `category` | String | Standardized broad category |
+| `department` | String | Target demographic |
+| `price` | Numeric | Normalized price in VND |
 | `details` | Object | Physical properties map: `main_color` (dominant color), `material` (fabric type), `size` (available sizes), `pattern` (print/texture) |
-| `season` | String | Seasonal suitability (*Mùa đông*, *Mùa hạ*, *Quanh năm*, etc.) |
-| `occasion` | Array | Occasion suitability array (*Đi học*, *Công sở*, *Thể thao*, *Du lịch*, *Dự tiệc*, etc.) |
+| `season` | String | Seasonal suitability |
+| `occasion` | Array | Occasion suitability array |
 | `brand` | String | Extracted and normalized brand name |
-| `images` | Array | Localized image paths (`MAIN` representation and sequential variants) |
+| `images` | Array | Localized image paths |
 | `description` | String | Concise, marketing-ready product description in Vietnamese |
 
 ---
