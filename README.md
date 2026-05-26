@@ -4,7 +4,7 @@
 ## 📌 Project Overview
 This repository contains the complete codebase and technical design of **Fashion RAG Chatbot** — an intelligent, multimodal "Virtual Style Assistant". 
 
-Our system integrates **Data Engineering pipelines** (raw ingestion, Selenium crawling, data cleaning, and expert styling advice mapping) with a **real-time Retrieval-Augmented Generation (RAG) system** driven by Local Language Models (LLMs) and Vision-Language Models (VLMs). The system runs entirely locally on consumer hardware or affordable GPU clouds, enabling high-performance, cost-effective, and secure customer consultation.
+Our system integrates **Data Engineering pipelines** (raw ingestion, Selenium crawling, data cleaning, and expert styling advice mapping) with a **real-time Retrieval-Augmented Generation (RAG) system** driven by Large Language Models (LLMs) and Vision-Language Models (VLMs). The system runs entirely locally on consumer hardware or affordable GPU clouds, enabling high-performance, cost-effective, and secure customer consultation.
 
 We solve the fundamental limitations of modern e-commerce chatbots (rigid rule-based answers) and native LLMs (hallucinations about product stock/pricing) by:
 1. **Intelligent Profile Matching (PERSON):** Real-time physical analysis (Body Silhouette & Skin Tone) from user-uploaded images to offer hyper-personalized outfit coordinate suggestions.
