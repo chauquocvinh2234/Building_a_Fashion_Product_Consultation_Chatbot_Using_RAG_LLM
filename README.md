@@ -1,4 +1,4 @@
-# Building a Fashion Consultation Chatbot using RAG (Retrieval-Augmented Generation) and Large Language Models (LLMs).
+# Building a Fashion Consultation Chatbot using Retrieval-Augmented Generation and Large Language Models.
 ---
 
 ## 📌 Project Overview
