@@ -21,7 +21,7 @@ The diagrams below illustrate the end-to-end system architecture and the data pr
 <p align="center">
   <img src="images/KienTrucHeThong.jpg" alt="Fashion Chatbot RAG System Architecture" width="95%" />
   <br/><br/>
-  <img src="images/LuongXuLyDuLieu.png" alt="Product Preprocessing Dataflow Pipeline" width="95%" />
+  <img src="images/LuongXuLyHeThong.jpg" alt="Fashion Chatbot RAG System Control-flow" width="95%" />
 </p>
 
 ---
@@ -106,7 +106,7 @@ To translate the raw item coordinates in the `FashionStylist` dataset into abstr
 
 ---
 
-## 📊 3.1. Catalog & Dataset Statistics (Trực Quan Hóa Dữ Liệu)
+## 📊 3.1. Catalog & Dataset Statistics
 Following our complete execution of the pipeline, the active knowledge base registers:
 * **Total Standardized Product Records:** `53,979` items.
 * **Total Expert Outfit Recipes:** `1,000` structured recipes.
