@@ -106,7 +106,9 @@ To translate the raw item coordinates in the `FashionStylist` dataset into abstr
 
 ---
 
-## 📊 3.1. Catalog & Dataset Statistics
+## 📊 4. Dataset Statistics & Data Samples (Thống Kê & Mẫu Dữ Liệu)
+
+### 4.1. Catalog & Dataset Statistics
 Following our complete execution of the pipeline, the active knowledge base registers:
 * **Total Standardized Product Records:** `53,979` items.
 * **Total Expert Outfit Recipes:** `1,000` structured recipes.
@@ -121,11 +123,11 @@ Following our complete execution of the pipeline, the active knowledge base regi
 
 ---
 
-## 📝 3.2. Data Samples (Before & After Preprocessing)
+### 4.2. Data Samples (Before & After Preprocessing)
 
 Below are the actual raw metadata inputs compared to our structured, RAG-ready pipeline outputs, demonstrating how the raw datasets are refined and translated:
 
-### 3.2.1. Amazon Product Ingestion Example
+#### 4.2.1. Amazon Product Ingestion Example
 
 🏠 **Raw Amazon Ingestion Input:**
 ```json
@@ -184,7 +186,7 @@ Below are the actual raw metadata inputs compared to our structured, RAG-ready p
 }
 ```
 
-### 3.2.2. Lazada Product Ingestion Example
+#### 4.2.2. Lazada Product Ingestion Example
 
 🏠 **Raw Lazada Scraped Input:**
 ```json
@@ -241,7 +243,7 @@ Below are the actual raw metadata inputs compared to our structured, RAG-ready p
 }
 ```
 
-### 3.2.3. Processed Outfit Recipe Example (Fashion Recipes)
+#### 4.2.3. Processed Outfit Recipe Example (Fashion Recipes)
 
 This blueprint represents how coordinates are abstracted into categorical labels while embedding expert stylist reasoning:
 ```json
@@ -268,7 +270,7 @@ This blueprint represents how coordinates are abstracted into categorical labels
 
 ---
 
-## 💾 4. Chatbot System Technical Components
+## 💾 5. Chatbot System Technical Components
 
 ```
 Chatbot_Fashion/
@@ -288,36 +290,36 @@ Chatbot_Fashion/
 │       └── chains.py              # LangChain integration
 ```
 
-### 4.1. Conversational Memory: Redis Stack
+### 5.1. Conversational Memory: Redis Stack
 * **Why Redis?** To maintain fluid, human-like dialogue, the chatbot needs to refer to preceding turns. Redis stores conversation logs in-memory for microsecond-level retrieval.
 * **Architecture:** hội thoại (conversational turns) are stored as JSON structures using Redis **Lists**.
 * **Memory Management:** To ensure high performance, sessions are assigned a **Time-To-Live (TTL)** (e.g., deleted after 12 or 24 hours of inactivity).
 * **Auto-Summarization:** If the context length exceeds 8 messages, the backend uses the LLM to summarize past turns, retaining the most recent 4 messages in full text. This keeps the prompt context compact, preventing VRAM overflow.
 
-### 4.2. Vector Database: Qdrant
+### 5.2. Vector Database: Qdrant
 * **Why Qdrant?** Serves as the "long-term memory" of the system, hosting all product embeddings. Rust-engineered, Qdrant is optimized for extreme throughput.
 * **Similarity Search:** Employs **HNSW (Hierarchical Navigable Small World)** indexes to perform semantic similarity matches, handling complex colloquial text (e.g., *"phối đồ phong cách trẻ trung đi chơi"*).
 * **Payload Filtering (Crucial for Business):** E-commerce systems cannot rely solely on semantic similarities; they must enforce strict filters (gender, size, price, availability). Qdrant allows storing attributes as a JSON payload attached directly to each vector. During HNSW search, Qdrant applies hard filtering constraints *concurrently* rather than post-search. This guarantees that recommended items are physically in-stock, within budget, and match the target customer demographic, eliminating hallucinated out-of-stock products.
 
-### 4.3. Dual-Language & Multilingual Embedding Models
+### 5.3. Dual-Language & Multilingual Embedding Models
 Vietnamese fashion terminology is deeply blended with English loanwords (e.g., *"blazer oversized"*, *"streetwear năng động"*, *"mix & match"*). We evaluated four embedding models to solve this linguistic crossover:
 1. **`BAAI/bge-m3`**: Multilingual, supports over 100 languages. 0.6B parameters, 1024 vector dimensions, 8192 context window. **Top performer in Vietnamese-English fashion semantics.**
 2. **`intfloat/multilingual-e5-base`**: Multilingual. 0.3B parameters, 768 dimensions, 512 context.
 3. **`VoVanPhuc/sup-SimCSE-Vietnamese-phobert-base`**: Vietnamese specialized. 0.1B parameters, 768 dimensions, 256 context.
 4. **`bkai-foundation-models/vietnamese-bi-encoder`**: Vietnamese specialized. 0.1B parameters, 768 dimensions, 256 context.
 
-### 4.4. Local LLM Generator: Qwen3-4B-Instruct
+### 5.4. Local LLM Generator: Qwen3-4B-Instruct
 * **Alibaba's Qwen3-4B-Instruct** is an optimized Small Language Model (SLM) configured via Ollama. 
 * It features a **262K context window**, providing exceptional reasoning and instruction-following capability. 
 * Running locally, it allows business owners to keep their data fully private without paying recurring API fees.
 
-### 4.5. Local VLM Processor: Qwen2.5-VL-3B-Instruct / Qwen3-VL-4B-Instruct
+### 5.5. Local VLM Processor: Qwen2.5-VL-3B-Instruct / Qwen3-VL-4B-Instruct
 * Integrates vision capabilities. It uses a dynamic resolution vision-language architecture.
 * Automatically analyzes user-uploaded images and extracts physical parameters (skin undertone, body proportions) or detects product characteristics (colors, sleeve style, fabric) with small footprint requirements.
 
 ---
 
-## 🔄 5. Real-Time Multimodal Processing Pipeline
+## 🔄 6. Real-Time Multimodal Processing Pipeline
 
 When a user interacts with the system, their input goes through a **5-Stage Execution Pipeline**:
 
@@ -347,7 +349,7 @@ When a user interacts with the system, their input goes through a **5-Stage Exec
 
 ---
 
-## 📈 6. Experimental Evaluation & Performance Metrics
+## 📈 7. Experimental Evaluation & Performance Metrics
 
 Testing and performance evaluations were conducted on a local hardware node equipped with:
 * **GPU:** NVIDIA GeForce RTX 3060 (12GB VRAM)
@@ -374,7 +376,7 @@ To evaluate retrieval quality and system latency, we generated a standard RAG te
 
 ---
 
-## 📸 7. Visual Interface Demo (Chatbot in Action)
+## 📸 8. Visual Interface Demo (Chatbot in Action)
 
 Here is a visual showcase of the **Fashion RAG Chatbot** interface executing real-time consultations:
 
@@ -390,7 +392,7 @@ Here is a visual showcase of the **Fashion RAG Chatbot** interface executing rea
 
 ---
 
-## 🚀 8. Quick Setup & Run Checklist
+## 🚀 9. Quick Setup & Run Checklist
 
 For detailed step-by-step setup guides, refer to [SETUP_GUIDE.md](file:///c:/Users/vinhp/OneDrive/M%C3%A1y%20t%C3%ADnh/Building_a_Fashion_Product_Consultation_Chatbot_using_RAG_LLM/Chatbot_Fashion/docs/SETUP_GUIDE.md). Below is the quick launch checklist:
 
@@ -443,7 +445,7 @@ This boots the FastAPI backend on **`http://localhost:8000`**. You can open the 
 
 ---
 
-## 🔮 9. Future Improvements
+## 🔮 10. Future Improvements
 1. **FashionCLIP Integration:** Transition from VLM text-captioning to a unified Multimodal Embedding Space using models like FashionCLIP. This will allow direct image-to-image semantic vector search, dropping intermediate captioning latency and preserving fine-grained visual details.
 2. **Stylist Fine-Tuning:** Supervised Fine-Tuning (SFT) of the local LLM on dedicated conversational fashion logs to align vocabulary and adopt the exact tone and phrasing of professional retail stylists.
 3. **Product Catalog Scalability:** Expanding Qdrant payloads with real-time API syncs to sync with live inventory management databases.
