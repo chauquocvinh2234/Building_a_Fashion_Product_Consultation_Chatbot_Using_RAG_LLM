@@ -47,7 +47,7 @@ graph TD
         UI -->|Input text query| EM
         EM -->|3. Query Vector| VS["Qdrant Vector Database"]:::database
         
-        RC -->|4a. Filter Constraints (Gender, Size, Budget)| VS
+        RC -->|4a. Filter Constraints: Gender, Size, Budget| VS
         VS -->|4b. Top-K Context + In-Stock Items| QA["LLM Generator (Qwen3-4B-Instruct)"]:::runtime
         
         RC -->|4c. Short-term Chat History Context| QA
