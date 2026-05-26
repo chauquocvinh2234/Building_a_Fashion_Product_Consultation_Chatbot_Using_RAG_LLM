@@ -328,8 +328,9 @@ Following our complete execution of the pipeline, the active knowledge base regi
 
 ### Data Visualization
 <p align="center">
-  <img src="images/danh_muc_thoi_trang.png" alt="Fashion Product Distribution by Categories" width="48%" />
-  <img src="images/gia_tri_unique_san_pham.png" alt="Unique Product Attribute Counts" width="48%" />
+  <img src="images/danh_muc_thoi_trang.png" alt="Fashion Product Distribution by Categories" width="85%" />
+  <br/><br/>
+  <img src="images/gia_tri_unique_san_pham.png" alt="Unique Product Attribute Counts" width="85%" />
 </p>
 
 ---
