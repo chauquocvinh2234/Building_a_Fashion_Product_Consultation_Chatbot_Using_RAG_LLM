@@ -139,6 +139,21 @@ To translate the raw item coordinates in the `FashionStylist` dataset into abstr
 
 ---
 
+## 📊 3.1. Catalog & Dataset Statistics (Trực Quan Hóa Dữ Liệu)
+Following our complete execution of the pipeline, the active knowledge base registers:
+* **Total Standardized Product Records:** `53,979` items.
+* **Total Expert Outfit Recipes:** `1,000` structured recipes.
+* **Localization Profile:** 100% Vietnamese translation supporting common bilingual terminology (e.g., *oversized, blazer, mix & match*).
+
+### Data Visualization
+<p align="center">
+  <img src="images/danh_muc_thoi_trang.png" alt="Fashion Product Distribution by Categories" width="85%" />
+  <br/><br/>
+  <img src="images/gia_tri_unique_san_pham.png" alt="Unique Product Attribute Counts" width="85%" />
+</p>
+
+---
+
 ## 💾 4. Chatbot System Technical Components
 
 ```
