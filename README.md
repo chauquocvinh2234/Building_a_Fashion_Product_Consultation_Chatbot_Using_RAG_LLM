@@ -15,9 +15,9 @@ The flowchart below demonstrates the end-to-end data pipeline, converting hetero
 
 ```mermaid
 graph TD
-    classDef source fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
-    classDef process fill:#fff9c4,stroke:#fbc02d,stroke-width:2px;
-    classDef database fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;
+    classDef source fill:#e1f5fe,stroke:#0288d1,stroke-width:2px,color:#01579b;
+    classDef process fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,color:#5d4037;
+    classDef database fill:#e8f5e9,stroke:#388e3c,stroke-width:2px,color:#1b5e20;
 
     subgraph Raw_Data_Sources [Raw Data Sources]
         A1["Amazon Reviews 2023 (AMAZON_FASHION)"]:::source
@@ -50,7 +50,7 @@ graph TD
     D3 --> D4
     D4 --> C2
 
-    C1 & C2 --> E[("Vector Database (Qdrant)")];
+    C1 & C2 --> E[("Vector Database (Qdrant)")]:::database;
 ```
 
 ---
