@@ -121,6 +121,153 @@ Following our complete execution of the pipeline, the active knowledge base regi
 
 ---
 
+## 📝 3.2. Data Samples (Before & After Preprocessing)
+
+Below are the actual raw metadata inputs compared to our structured, RAG-ready pipeline outputs, demonstrating how the raw datasets are refined and translated:
+
+### 3.2.1. Amazon Product Ingestion Example
+
+🏠 **Raw Amazon Ingestion Input:**
+```json
+{
+    "product_id": "B07SB2892S", 
+    "title": "RONNOX Women's 3-Pairs Bright Colored Calf Compression Tube Sleeves", 
+    "main_category": "AMAZON FASHION", 
+    "price": 17.99, 
+    "store": "RONNOX", 
+    "images": [
+        {"large": "images/B07SB2892S_MAIN.jpg", "variant": "MAIN"}, 
+        {"large": "images/B07SB2892S_PT01.jpg", "variant": "PT01"}
+    ], 
+    "details": {
+        "Is Discontinued By Manufacturer": "No", 
+        "Package Dimensions": "7.7 x 4.3 x 1.8 inches; 6.38 Ounces", 
+        "Department": "womens", 
+        "Date First Available": "July 18, 2017", 
+        "Manufacturer": "RONNOX"
+    }, 
+    "features": [
+        "Pull On closure", 
+        "Size Guide: \"S\" fits calf 10-12 inches. \"M\" fits calf 12-14 inches...", 
+        "3 Pairs: Styles and colors as seen in the picture. Choose between colorful sporty patterns & colored solids", 
+        "Medium Compression: The solid styles have 16-20 mmHg Graduated Compression...", 
+        "Helps in reducing swelling and aching in the legs. Great for pregnancy & flight travel"
+    ], 
+    "description": [
+        "Ronnox Calf Sleeves - Allowing Your Body to Perform at Its Best!... ➤ Sizes: Small / Medium / Large / Extra Large. ➤ Colors: Hot Pink / Neon Green."
+    ]
+}
+```
+
+✨ **Standardized RAG Output (Vietnamese Localized):**
+```json
+{
+    "product_id": "B07SB2892S",
+    "title": "Bộ 3 đôi tất ống ép hỗ trợ bắp chân RONNOX nữ",
+    "category": "Phụ kiện hỗ trợ",
+    "department": "Nữ",
+    "price": 431759,
+    "details": {
+        "main_color": "Hồng neon, Xanh neon",
+        "material": "Neoprene",
+        "size": "S, M, L, XL",
+        "pattern": "Trơn, Họa tiết thể thao"
+    },
+    "season": "Quanh năm",
+    "occasion": ["Thể thao", "Du lịch"],
+    "brand": "RONNOX",
+    "images": [
+        {"large": "images/B07SB2892S_MAIN.jpg", "variant": "MAIN"},
+        {"large": "images/B07SB2892S_PT01.jpg", "variant": "PT01"}
+    ],
+    "description": "Tất hỗ trợ bắp chân với công nghệ nén giúp cải thiện tuần hoàn máu và giảm mỏi cơ. Chất liệu vải mềm mại, thấm hút mồ hôi và co giãn tốt."
+}
+```
+
+### 3.2.2. Lazada Product Ingestion Example
+
+🏠 **Raw Lazada Scraped Input:**
+```json
+{
+    "product_id": "pdp-i13360675870", 
+    "product_url": "https://www.lazada.vn/products/pdp-i13360675870.html", 
+    "title": "V·grass/V-GRASS | Chân Váy Dài Một Phân Bằng Lụa Organza Thêu Đính Chất Lượng Cao", 
+    "price": 17655000, 
+    "department": "Nữ", 
+    "category": "Chân váy", 
+    "colors": ["màu xám chim bồ câu"], 
+    "sizes": ["L.", "s", "Ông."], 
+    "specifications": {
+        "Thương hiệu": "V·grass/V-GRASS", 
+        "SKU": "13360675870_VNAMZ-116870185329", 
+        "Chất liệu trang phục": "Sa tanh", 
+        "Họa tiết": "In toàn bộ", 
+        "Phong cách trang phục": "Bình thường", 
+        "Loại đầm": "Váy chữ A"
+    }, 
+    "highlights": [], 
+    "description": [
+        "Thiết kế nửa chiều dài... Organza lụa nguyên chất... Đính cườm thủ công..."
+    ], 
+    "images": [
+        {"large": "images/pdp-i13360675870_MAIN.jpg", "variant": "MAIN"}, 
+        {"large": "images/pdp-i13360675870_PT01.jpg", "variant": "PT01"}
+    ]
+}
+```
+
+✨ **Standardized RAG Output (Vietnamese Localized):**
+```json
+{
+    "product_id": "pdp-i13360675870", 
+    "title": "Chân váy dài lụa Organza thêu đính", 
+    "category": "Chân váy", 
+    "department": "Nữ", 
+    "price": 17655000, 
+    "details": {
+        "main_color": "Xám chim bồ câu", 
+        "material": "Sa tanh, lụa Organza", 
+        "size": "S, L", 
+        "pattern": "In toàn bộ"
+    }, 
+    "season": "Mùa hạ", 
+    "occasion": ["Xã hội", "Hàng ngày"], 
+    "brand": "V·grass/V-GRASS", 
+    "images": [
+        {"large": "images/pdp-i13360675870_MAIN.jpg", "variant": "MAIN"}, 
+        {"large": "images/pdp-i13360675870_PT01.jpg", "variant": "PT01"}
+    ], 
+    "description": "Chân váy chữ A dài nửa thân được chế tác từ lụa organza cao cấp với chi tiết đính cườm thủ công tinh xảo. Thiết kế sang trọng, linh hoạt cho cả đi chơi và sự kiện trang trọng."
+}
+```
+
+### 3.2.3. Processed Outfit Recipe Example (Fashion Recipes)
+
+This blueprint represents how coordinates are abstracted into categorical labels while embedding expert stylist reasoning:
+```json
+{
+  "rule_key": "Áo khoác nhẹ/Áo len | minimalist casual hooded top",
+  "phong_cach": "Japanese Cityboy",
+  "boi_canh": "Mùa xuân – Học đường",
+  "dang_nguoi": [
+    "Dáng quả lê",
+    "Dáng quả táo",
+    "Người ngoại cỡ"
+  ],
+  "tone_da": [
+    "Mọi tone da"
+  ],
+  "goi_y_phoi_cung": [
+    "Áo mặc trong (áo thun/sơ mi)",
+    "Quần/Chân váy",
+    "Giày dép"
+  ],
+  "ly_do_tu_van": "Sự kết hợp giữa chiếc áo hoodie tối giản và các món đồ basic như áo thun/sơ mi, quần/chân váy cùng giày sneaker tạo nên vẻ ngoài năng động, khỏe khoắn đậm chất Japanese Cityboy, rất phù hợp với không khí học đường mùa xuân."
+}
+```
+
+---
+
 ## 💾 4. Chatbot System Technical Components
 
 ```
